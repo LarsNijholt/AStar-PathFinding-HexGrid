@@ -7,9 +7,9 @@ using UnityEngine;
 
 public static class Pathfinding
 {
-    private static readonly Color pathColor = new Color(0.65f, 0.35f, 0.35f);
-    private static readonly Color OpenColor = new Color(0.4f, 0.6f, 0.4f);
-    private static readonly Color ClosedColor = new Color(0.35f, 0.4f, 0.5f);
+    private static readonly Color pathColor = Color.red;
+    private static readonly Color OpenColor = Color.green;
+    private static readonly Color ClosedColor = Color.blue;
 
     public static List<BaseNode> FindPath(BaseNode startNode, BaseNode targetNode)
     {

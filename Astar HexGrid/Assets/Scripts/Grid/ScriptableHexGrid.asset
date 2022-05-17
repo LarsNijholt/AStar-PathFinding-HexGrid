@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af9f0782d184034cbc83908f73e020c, type: 3}
   m_Name: ScriptableHexGrid
   m_EditorClassIdentifier: 
-  baseNodeprefab: {fileID: 0}
+  baseNodeprefab: {fileID: 7780389297940845240, guid: 259108f495cbcfd4c9a7cc40c8e6df89, type: 3}
   _barrierWeight: 3
   _gridWidth: 16
   _gridHeight: 9

@@ -33,10 +33,11 @@ namespace Scripts.Hexgrid
 
         private int AxialLength()
         {
-            if(_q == 0 && _r == 0) return 0;
+            if (_q == 0 && _r == 0) return 0;
             if (_q > 0 && _r >= 0) return _q + _r;
-            if(_q <= 0 && _r > 0) return _q < _r ? _r : _q;
-            return -_r > _q ? _r : _q;
+            if(_q <= 0 && _r > 0) return -_q < _r ? _r : -_q;
+            if (_q < 0) return -_q - _r;
+            return -_r > _q ? -_r : _q;
         }
 
         public static HexGridCoordinates operator -(HexGridCoordinates a, HexGridCoordinates b)

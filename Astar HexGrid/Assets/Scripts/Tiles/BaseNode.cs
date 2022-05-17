@@ -34,8 +34,8 @@ namespace Scripts.Hexgrid
         }
 
         public static event Action<BaseNode> OnAboveNode;
-        private void OnActivate() => OnAboveNode += DefinetelyAboveNode;
-        private void OnDeactivate() => OnAboveNode -= DefinetelyAboveNode;
+        private void OnEnable() => OnAboveNode += DefinetelyAboveNode;
+        private void OnDisable() => OnAboveNode -= DefinetelyAboveNode;
         private void DefinetelyAboveNode(BaseNode selectedNode) => _selected = selectedNode == this;
 
         protected virtual void OnMouseDown()
