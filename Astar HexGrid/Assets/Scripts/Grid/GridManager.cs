@@ -30,6 +30,21 @@ namespace Scripts.Grid
             Nodes = _grid.GenerateGrid();
 
             foreach (var node in Nodes.Values) node.GetNeighbours();
+            SpawnGridSprites();
+            BaseNode.OnAboveNode += OnAboveNode;
+        }
+
+        private void OnDestroy() => BaseNode.OnAboveNode -= OnAboveNode;
+        
+
+        private void OnAboveNode(BaseNode baseNode)
+        {
+            _goalNode = baseNode;
+            _goal.transform.position = _goalNode.Coordinates.Position;
+
+            foreach (var n in Nodes.Values) n.RevertNode();
+
+            var path = Pathfinding.FindPath(_playerBaseNode, _goalNode);
         }
 
         void SpawnGridSprites()

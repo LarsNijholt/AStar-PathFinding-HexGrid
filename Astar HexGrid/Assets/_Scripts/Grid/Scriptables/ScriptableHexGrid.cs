@@ -3,7 +3,7 @@ using _Scripts.Tiles;
 using UnityEngine;
 
 namespace Tarodev_Pathfinding._Scripts.Grid.Scriptables {
-    [CreateAssetMenu(fileName = "New Scriptable Hex Grid")]
+    //[CreateAssetMenu(fileName = "New Scriptable Hex Grid")]
     public class ScriptableHexGrid : ScriptableGrid {
 
         [SerializeField,Range(1,50)] private int _gridWidth = 16;

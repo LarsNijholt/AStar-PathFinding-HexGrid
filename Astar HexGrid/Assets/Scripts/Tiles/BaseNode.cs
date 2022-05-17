@@ -44,11 +44,6 @@ namespace Scripts.Hexgrid
             OnAboveNode?.Invoke(this);
         }
 
-        [Header("Pathfinding")]
-        [SerializeField] private TextMeshPro _fCostText;
-
-        [SerializeField] private TextMeshPro _gCostText, _hCostText;
-
         public List<BaseNode> Neighbours { get; protected set; }
         public BaseNode Connection { get; private set; }
         public float G { get; private set; }
@@ -65,20 +60,10 @@ namespace Scripts.Hexgrid
         public void SetG(float g)
         {
             G = g;
-            SetText();
         }
         public void SetH(float h)
         {
             H = h;
-            SetText();
-        }
-
-        private void SetText()
-        {
-            if (_selected) return;
-            _gCostText.text = G.ToString();
-            _hCostText.text = H.ToString();
-            _fCostText.text = F.ToString();
         }
 
         public void SetColor(Color color) => _spriteRenderer.color = color;
@@ -86,9 +71,6 @@ namespace Scripts.Hexgrid
         public void RevertNode()
         {
             _spriteRenderer.color = _defaultColor;
-            _gCostText.text = "";
-            _hCostText.text = "";
-            _fCostText.text = "";
         }
     }
 }
